@@ -47,5 +47,6 @@ def clean_features(df):
 
     df = df[(df['birthwgt_lb']<20) & (df['outcome']==1)].copy()
     df.loc[:, 'weight'] = df.apply(lambda row: row['birthwgt_lb']+ row['birthwgt_oz']/16, axis=1)
-
+    df.to_csv("data/temp/cleaned_features.csv", index=False)
+    
     return df

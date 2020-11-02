@@ -14,7 +14,7 @@ from stat_model import ttest
 def main(targets):
     '''
     Runs the main project pipeline logic, given the targets.
-    targets must contain: 'data', 'analysis', 'model'.
+    targets must contain: 'data', 'features', 'model'.
 
     `main` runs the targets in order of data=>analysis=>model.
     '''
@@ -22,7 +22,7 @@ def main(targets):
     if 'data' in targets:
         with open('config/data_params.json') as fh:
             data_cfg = json.load(fh)
-        # make the data target
+
         datafile = get_data(**data_cfg)
 
     if 'features' in targets:
@@ -33,7 +33,6 @@ def main(targets):
         cleaned_data = clean_features(data)
 
     if 'model' in targets:
-        # make the data target
         with open('config/model_params.json') as fh:
             feats_cfg = json.load(fh)
         s, pval = ttest(cleaned_data, **feats_cfg)
