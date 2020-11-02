@@ -21,7 +21,7 @@ We start by assuming the null hypotheis which is first borns are likely to arriv
 ### Building the project stages using `run.py`
 
 * To get the data, from the project root dir, run `python run.py data features`
-  - This fetches the data, then creates features and saves them in the cleaned data in data/temp directory..
+  - This fetches the data, creates features, cleans data and saves the data in data/temp directory.
 * To get the results of statistical test, from the project root dir, run `python run.py data features model`
   - This fetches the data, creates the features, creates a statistical model and saves the result of the ttest in the data/out directory.
 
