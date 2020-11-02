@@ -8,22 +8,20 @@ We start by assuming the null hypotheis which is first borns are likely to arriv
 
 ## Retrieving the data locally:
 
-(1) To download the data file 2002FemPreg.dat.gz, from the Think stats website http://www.greenteapress.com/thinkstats/nsfg.html.
+(1) Download the data file 2002FemPreg.dat.gz, from the Think stats website http://www.greenteapress.com/thinkstats/nsfg.html.
 
 (2) Edit the file: __config/data-params.json__ to include the path/location of the downloaded data in the value of the _indir_ key
 
 
-
 ## Running the project
 
-* To setup the environment
+* To install the dependencies, run the following command from the root directory of the project: `pip install -r requirements.txt`
 
   
 ### Building the project stages using `run.py`
 
 * To get the data, from the project root dir, run `python run.py data features`
-  - This fetches the data, then creates features and saves them in the location specified in `features-params.json`.
-* To get the results of statistical test, from the project root dir, run `python run.py data
-  features model`
+  - This fetches the data, then creates features and saves them in the cleaned data in data/temp directory..
+* To get the results of statistical test, from the project root dir, run `python run.py data features model`
   - This fetches the data, creates the features, creates a statistical model and saves the result of the ttest in the data/out directory.
 
